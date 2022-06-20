@@ -1,36 +1,40 @@
-const userName = prompt('inserisci il tuo nome e cognome');
+const dataAcquisition = document.querySelector('#data-acquisition');
 
-const userJourney = parseInt(prompt('inserisci i km da percorrere'));
+dataAcquisition.addEventListener('click', function(){
+ 
+    const userName = (document.getElementById('user-name').value);
+    const userAge = parseInt(document.getElementById('user-age').value);
+    const userDistance = parseInt(document.getElementById('user-km').value);
+    console.log(userAge, userDistance);
+    const carrozzaUtente = (Math.floor(Math.random() * 10)+1);
 
-const userAge = parseInt(prompt('inserisci la tua età'));
+    const pricePerKm= 0.26;
+    let totalPrice= pricePerKm;
+    totalPrice *= userDistance;
 
-console.log(userAge, userJourney);
+    if( userAge < 18){
+    const discount= ((totalPrice * 15) / 100);
+    totalPrice=totalPrice-discount;
+    } 
 
-const pricePerkm = 0.21;
+    else if( userAge >= 65){
+        const discount= ((totalPrice * 35) / 100);
+        totalPrice=totalPrice-discount;
+                
+    } 
 
-let ticketPrice = pricePerkm;
+    // ? arrotondiamo a due cifre max dopo la virgola
 
-console.log(ticketPrice);
+    totalPrice= totalPrice.toFixed(2);
+    console.log(totalPrice);
+    
+    document.getElementById('name-utente').innerHTML = userName;
 
-ticketPrice = ticketPrice * userJourney;
+    
+    document.getElementById('carrozza').innerHTML = carrozzaUtente;
 
-if (userAge < 18) {
+    
+    document.getElementById('prezzo').innerHTML ='€'+ totalPrice;
 
-    const discount = ((ticketPrice * 20) / 100);
-    ticketPrice = ticketPrice - discount;
-
-}
-
-else if (userAge > 65) {
-
-    const discount = ((ticketPrice * 40) / 100);
-    ticketPrice = ticketPrice - discount;
-
-}
-
-
-document.getElementById('user-age').innerHTML = userAge;
-
-document.getElementById('user-journey').innerHTML = userJourney;
-
-document.getElementById('user-name').innerHTML = userName;
+    
+});
