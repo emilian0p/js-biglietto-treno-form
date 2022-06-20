@@ -1,68 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Boostrap  5.2.0-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-    <!-- il mio css -->
-    <link rel="stylesheet" href="./style.css">
-    <title>Trenitalia</title>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
 </head>
-
 <body>
-    <div>
-        <!-- prima parte -->
-        <section>
-            <!-- titolo sezione prima-->
-            <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-            <div>
-                <!-- aree di testo -->
-                <div>
-                    <div>
-                        <!-- titolo sottosezione prima -->
-                        <h3>Nome Cognome</h3>
-                        <input type="text" id="user-name">
-                    </div>
-                    <div>
-                        <!-- titolo sottosezione prima -->
-                        <h3>Km da percorrere</h3>
-                        <input type="text" id="user-journey">
-                    </div>
-                    <div>
-                        <!-- titolo sottosezione prima -->
-                        <h3>Fascia di età</h3>
-                        <input type="text" id="user-age">
-                    </div>
-                </div>
-                <!-- bottoni genera e annulla -->
-                <div>
-                    <button>Genera</button>
-                    <button>Annulla</button>
-                </div>
-            </div>
-        </section>
-        <!-- seconda parte -->
-        <section>
-            <!-- titolo sezione seconda -->
-            <h1>IL TUO BIGLIETTO</h1>
-            <div>
-                <div>
-                    <!-- titolo sottosezione seconda-->
-                    <h3>DETTAGLIO PASSEGGERI</h3>
-                </div>
-                <div>
 
-                </div>
-            </div>
-        </section>
+  <header >
+  
+  <main class="sezione-compilazione">
+    
+    <div class="p-5 text-white">
+      <div class="d-flex justify-content-center inserimento-dati bg-light rounded-3">
+        <!-- ! nome -->
+        <div class="mb-3 p-4">
+          <input type="text" class="form-control" id="user-name" placeholder="Nome passeggero" >
+        </div>
+        <!-- ! eta -->
+        <div class="mb-3 p-4 ">
+          <input type="number" class="form-control" id="user-age" placeholder="Età del passeggero"  >
+        </div>
+        <!-- ! km -->
+        <div class="mb-3 p-4 ">
+          <input type="number" class="form-control" id="user-km" placeholder="Km che vuoi percorrere" >
+        </div>
+      </div>
+    <!-- ! BOTTONE DI INVIO DATI AL JS -->
+    <div class="text-center mt-2">
+      <button type="Invio Dati" id="data-acquisition" class="btn btn-primary">Submit</button>
     </div>
+      
+    <div>
+      <table class="p-4 d-flex justify-content-center text-dark">
+        <tr class="bg-light">
+          <th class="p-5 ">Nome</th>
+          <th class="p-5">binario</th>
+          <th class="p-5">prezzo</th>
+        </tr>
+        <tr class="bg-light">
+          <td class="p-5 "><span id="name-utente"></span></td>
+          <td class="p-5"><span id="carrozza"></span></td>
+          <td class="p-5"><span id="prezzo"></span></td>
+        </tr>
+      </table>
+    </div>
+  </main>
+  
+  <footer>
+
+  </footer>
+    
+  <script src="./main.js"></script>
 </body>
-<!-- il mio javascript -->
-<script type="text/javascript" src="./main.js"></script>
 </html>
