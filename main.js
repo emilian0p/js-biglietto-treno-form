@@ -6,7 +6,7 @@ dataAcquisition.addEventListener('click', function(){
     const userAge = parseInt(document.getElementById('user-age').value);
     const userDistance = parseInt(document.getElementById('user-km').value);
     console.log(userAge, userDistance);
-    const carrozzaUtente = (Math.floor(Math.random() * 10)+1);
+    const binarioUtente = (Math.floor(Math.random() * 10)+1);
 
     const pricePerKm= 0.26;
     let totalPrice= pricePerKm;
@@ -23,15 +23,15 @@ dataAcquisition.addEventListener('click', function(){
                 
     } 
 
-    // ? arrotondiamo a due cifre max dopo la virgola
+/*  arrotondiamo a due cifre max dopo la virgola */
 
     totalPrice= totalPrice.toFixed(2);
     console.log(totalPrice);
     
-    document.getElementById('name-utente').innerHTML = userName;
+    document.getElementById('nome-utente').innerHTML = userName;
 
     
-    document.getElementById('carrozza').innerHTML = carrozzaUtente;
+    document.getElementById('binario').innerHTML = binarioUtente;
 
     
     document.getElementById('prezzo').innerHTML ='€'+ totalPrice;
